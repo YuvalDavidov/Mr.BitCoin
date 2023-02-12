@@ -1,5 +1,12 @@
-header {
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: lightblue;
-    text-align: center;
+    // text-align: center;
     padding: 10px;
+
+    & .user-rate {
+        padding: 5px;
+    }
 }

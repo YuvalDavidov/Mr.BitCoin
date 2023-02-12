@@ -1,0 +1,15 @@
+.home-page {
+    padding: 10px;
+    background-color: lightgray;
+    display: grid;
+    gap: 10px;
+
+    h1 {
+        text-align: center;
+    }
+
+    article {
+        min-width: 200px;
+        justify-self: center;
+    }
+}

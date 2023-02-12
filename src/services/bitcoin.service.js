@@ -14,7 +14,8 @@ export const bitcoinService = {
 async function getRate() {
     let res = storageService.load(KEY)
     if (!res) {
-        res = await axios.get('https://blockchain.info')
+        res = await axios.get('https://blockchain.info/tobtc?currency=USD&value=1&cors=true')
+            .then((response) => response.data)
     }
     storageService.save(KEY, res)
     return res

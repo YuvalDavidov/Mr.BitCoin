@@ -1,3 +1,16 @@
 body {
     margin: 0;
 }
+
+main {
+    min-height: calc(90vh - 1rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}

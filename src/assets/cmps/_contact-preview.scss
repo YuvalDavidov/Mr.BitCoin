@@ -1,0 +1,16 @@
+.contact-preview {
+    background-color: rgb(172, 247, 172);
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+
+    p {
+        margin: 0;
+    }
+
+    label {
+        span {
+            font-weight: bold;
+        }
+    }
+}

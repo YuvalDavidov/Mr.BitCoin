@@ -3,7 +3,7 @@
     <h3>BitCoin</h3>
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/contacts">Contacts</RouterLink>
+      <RouterLink to="/contact">Contacts</RouterLink>
     </nav>
     <div v-if="user" class="user-rate">
       <h4>{{ user.name }}</h4>

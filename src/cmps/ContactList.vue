@@ -9,7 +9,9 @@
         <ContactPreview :contact="contact" />
         <section class="actions">
           <button @click="onRemoveContact(contact._id)">x</button>
-          <button>details</button>
+          <RouterLink :to="`/contact/${contact._id}`">
+            <button>Details</button>
+          </RouterLink>
         </section>
       </li>
     </ul>

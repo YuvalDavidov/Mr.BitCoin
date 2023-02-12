@@ -130,8 +130,8 @@ export const contactService = {
 }
 
 async function query() {
-    let contacts = dbService.query(KEY)
-    if (!contacts.length) {
+    let contacts = await dbService.query(KEY)
+    if (!contacts.length || !contacts) {
         contacts = [
             {
                 "_id": "5a56640269f443a5d64b32ca",
@@ -249,7 +249,7 @@ async function query() {
                 "phone": "+1 (842) 587-3812"
             }
         ];
-        dbService.insert(KEY, contacts)
+        await dbService.insert(KEY, contacts)
     }
     return contacts
 }

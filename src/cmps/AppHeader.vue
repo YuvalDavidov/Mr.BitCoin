@@ -4,6 +4,7 @@
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/contact">Contacts</RouterLink>
+      <RouterLink to="/stats">Stats</RouterLink>
     </nav>
     <div v-if="user" class="user-rate">
       <h4>{{ user.name }}</h4>

@@ -1,8 +1,12 @@
 <template>
   <section>
     <h3>Contacts</h3>
-    <ContactFilter />
-    <ContactList @remove="removeContact" v-if="contacts" :contacts="contacts" />
+    <ContactFilter @filter="onSetFilterBy" />
+    <ContactList
+      @remove="removeContact"
+      v-if="contacts"
+      :contacts="filteredContacts"
+    />
   </section>
 </template>
 
@@ -15,6 +19,7 @@ export default {
   data() {
     return {
       contacts: null,
+      filterBy: {},
     };
   },
   async created() {
@@ -26,6 +31,15 @@ export default {
       this.contacts = this.contacts.filter(
         (contact) => contact._id !== contactId
       );
+    },
+    onSetFilterBy(filterBy) {
+      this.filterBy = filterBy;
+    },
+  },
+  computed: {
+    filteredContacts() {
+      const regex = new RegExp(this.filterBy.txt, "i");
+      return this.contacts.filter((contact) => regex.test(contact.name));
     },
   },
   components: {

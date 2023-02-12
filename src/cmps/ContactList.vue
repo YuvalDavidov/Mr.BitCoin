@@ -7,6 +7,10 @@
         :key="contact._id"
       >
         <ContactPreview :contact="contact" />
+        <section class="actions">
+          <button @click="onRemoveContact(contact._id)">x</button>
+          <button>details</button>
+        </section>
       </li>
     </ul>
   </section>
@@ -19,6 +23,11 @@ export default {
     contacts: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    onRemoveContact(contactId) {
+      this.$emit("remove", contactId);
     },
   },
   components: {

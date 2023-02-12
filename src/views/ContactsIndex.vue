@@ -2,7 +2,7 @@
   <section>
     <h3>Contacts</h3>
     <ContactFilter />
-    <ContactList v-if="contacts" :contacts="contacts" />
+    <ContactList @remove="removeContact" v-if="contacts" :contacts="contacts" />
   </section>
 </template>
 
@@ -19,6 +19,14 @@ export default {
   },
   async created() {
     this.contacts = await contactService.query();
+  },
+  methods: {
+    async removeContact(contactId) {
+      await contactService.remove(contactId);
+      this.contacts = this.contacts.filter(
+        (contact) => contact._id !== contactId
+      );
+    },
   },
   components: {
     ContactFilter,

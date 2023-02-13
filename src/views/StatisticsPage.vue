@@ -8,18 +8,7 @@
 <script>
 import ChartBar from "../cmps/ChartBat.vue";
 
-import { bitcoinService } from "../services/bitcoin.service";
-
 export default {
-  data() {
-    return {
-      stats: null,
-    };
-  },
-  async created() {
-    this.stats = bitcoinService.getMarketPriceHistory();
-    console.log(this.stats);
-  },
   components: {
     ChartBar,
   },
